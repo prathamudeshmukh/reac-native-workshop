@@ -57,12 +57,13 @@ export default class SearchScreen extends React.Component {
         <View style={styles.controlContainer}>
           <View style={styles.textInputContainer}>
             <TextInput
+              testID="search-input"
               style={styles.searchInput}
               onChangeText={text => this.setState({ searchText: text })}
             />
           </View>
           <View style={styles.buttonContainer}>
-            <Button onClick={this.onSearch}>SEARCH</Button>
+            <Button testID="search-button" onClick={this.onSearch}>SEARCH</Button>
           </View>
         </View>
         <View style={styles.listContainer}>
