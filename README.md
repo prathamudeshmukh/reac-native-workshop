@@ -1,6 +1,7 @@
 # React Native workshop - Demo app using Marvel APIs
 
 - To Run E2E detox tests
+  <img src="https://i.imgur.com/xE9UZAz.gifv">
   - Install `detox-cli` first
   ```
   npm install -g detox-cli
