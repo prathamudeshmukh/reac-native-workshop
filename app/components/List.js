@@ -1,6 +1,6 @@
 import React from "react";
 import { FlatList, Text, View, Image, TouchableOpacity } from "react-native";
-import styles from './styles/ListStyle';
+import styles from "./styles/ListStyle";
 
 export default class List extends React.Component {
   constructor() {
@@ -15,19 +15,23 @@ export default class List extends React.Component {
     );
   }
 
-  renderItem({ item }) {
+  renderItem({ item, index }) {
+    console.log("index", index);
     return (
-      <TouchableOpacity onPress={() => this.props.onItemClick(item)}>
+      <TouchableOpacity
+        onPress={() => this.props.onItemClick(item)}
+        testID={"row"}
+      >
         <View style={styles.row}>
           <View style={styles.imageContainer}>
             <Image
               style={styles.thumbnail}
               source={{ uri: item.thumbnailUrl }}
-              resizeMode={'cover'}
+              resizeMode={"cover"}
             />
           </View>
           <View style={styles.item}>
-            <Text>{item.name}</Text>
+            <Text testID={"name_" + index}>{item.name}</Text>
           </View>
         </View>
       </TouchableOpacity>
@@ -37,6 +41,7 @@ export default class List extends React.Component {
   render() {
     return (
       <FlatList
+        testID="character-list"
         data={this.props.data}
         renderItem={this.renderItem}
         ItemSeparatorComponent={this.renderSeparator}
