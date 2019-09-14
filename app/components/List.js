@@ -37,6 +37,7 @@ export default class List extends React.Component {
   render() {
     return (
       <FlatList
+        testID={"character-list"}
         data={this.props.data}
         renderItem={this.renderItem}
         ItemSeparatorComponent={this.renderSeparator}

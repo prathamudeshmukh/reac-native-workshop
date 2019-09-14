@@ -43,7 +43,7 @@ export default class SearchScreen extends React.Component {
         this.setState({ data: parsedData });
       })
       .catch(error => {
-        console.error(error);
+        console.log('error while calling api', error);
       });
   }
 
@@ -63,7 +63,9 @@ export default class SearchScreen extends React.Component {
             />
           </View>
           <View style={styles.buttonContainer}>
-            <Button testID="search-button" onClick={this.onSearch}>SEARCH</Button>
+            <Button testID="search-button" onClick={this.onSearch}>
+              SEARCH
+            </Button>
           </View>
         </View>
         <View style={styles.listContainer}>
